@@ -1,0 +1,11 @@
+{% include "header.html" %}
+    <form action="{{ url_for('add') }}" method="POST">
+      <label for="book-title">Book Name</label>
+      <input type="text" id="book-title" name="title"/>
+      <label for="book-author">Book Author</label>
+      <input type="text" id="book-author" name="author"/>
+      <label for="book-rating">Rating</label>
+      <input type="text" id="book-rating" name="rating"/>
+      <button type="submit">Add Book</button>
+    </form>
+{% include "footer.html" %}

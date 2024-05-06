@@ -1,0 +1,11 @@
+{% include "header.html" %}
+    <form action="{{ url_for('edit') }}" method="POST" class="lead">
+        <p><b>Book Name:</b> {{book.title}}</p>
+        <p><b>Book Author:</b> {{book.author}}</p>
+        <p><b>Current Rating:</b> {{book.rating}}</p>
+        <input hidden="hidden" name="id" value="{{book.id}}">
+        <label for="rating"><b>Update Rating:</b></label>
+        <input type="text" id="rating" name="rating" placeholder="New Rating">
+        <button type="submit" class="lead btn btn-success"><b>Change Rating</b></button>
+    </form>
+{% include "footer.html" %}
