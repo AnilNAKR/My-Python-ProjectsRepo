@@ -14,11 +14,11 @@
 
 # -->(Write into the file)
 # with open("myFile.txt", mode='w') as file:
-#     file.write("My full name is Anil Kumar Reddy")
+#     file.write("My full name is Anil")
 
 # -->append content into the file
 # with open("myFile.txt", mode = 'a') as file:
-#     file.write("\nSorry My full name is Nadiminti Anil Kumar Reddy")
+#     file.write("\nSorry My full name is Anil Kumar Reddy")
 
 # --> this will create a new file, if the file is not present
 with open("anil.txt", mode='w') as file:
