@@ -52,8 +52,9 @@ def deduct_resources(customer_choice):
 def calculate_coins(quarters, dimes, nickles, pennies):
     return quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01
 
+
 while is_on:
-    customer_choice = input("What would you like? (espresso/latte/cappuccino)").lower()
+    customer_choice = input("What would you like? (espresso/latte/cappuccino) ").lower()
     if customer_choice == "off":
         is_on = False
     elif customer_choice == "report":
