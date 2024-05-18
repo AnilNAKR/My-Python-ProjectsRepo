@@ -1,3 +1,4 @@
+# This program consists of controlling turtle using keyboard keys
 from turtle import Turtle, Screen
 
 tim = Turtle()
