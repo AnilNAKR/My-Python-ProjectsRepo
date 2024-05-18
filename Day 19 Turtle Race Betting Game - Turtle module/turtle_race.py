@@ -1,11 +1,10 @@
-import turtle
 from turtle import Turtle, Screen
 import random
 
 screen = Screen()
 screen.setup(width=500, height=400)
 user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race? Enter a color: ")
-color_list= ["red", "blue", "orange", "green", "black", "purple"]
+color_list = ["red", "blue", "orange", "green", "black", "purple"]
 y_positions = [-70, -40, -10, 20, 50, 80]
 all_turtles = []
 
@@ -29,8 +28,7 @@ while race_on:
                 print(f"you've won! The {winning_color} turtle is the winner!")
             else:
                 print(f"You've lost! The {winning_color} turtle is the winner!")
-        random_distance = random.randint(0,10)
+        random_distance = random.randint(0, 10)
         turtle.forward(random_distance)
-
 
 screen.exitonclick()
