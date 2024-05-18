@@ -22,7 +22,7 @@ if today_tuple in birthday_dict:
         print(modified_content)
     my_email = "n.anilkumar7896@gmail.com"
     my_password = os.environ.get('MAIL_KEY')
-    with smtplib.SMTP("smtp.gmail.com") as connection:
+    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
         connection.sendmail(
