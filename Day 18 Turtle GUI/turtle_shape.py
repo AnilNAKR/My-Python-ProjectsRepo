@@ -11,6 +11,7 @@ def draw_shape(num_sides, pencolor):
         tim.forward(100)
         tim.right(angle)
 
+
 color_list = ["Navy", "Red", "DarkGreen", "Teal", "OrangeRed", "FireBrick", "Magenta", "Maroon"]
 for sides in range(3, 11):
     draw_shape(sides, color_list[sides - 3])
