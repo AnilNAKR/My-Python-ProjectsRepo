@@ -11,6 +11,8 @@ try:
 
 except FileNotFoundError:
     original_data = pd.read_csv("data/french_words.csv")
+    # Here orient="records" is used to get output -> [{'French': 'partie', 'English': 'part'}...]
+    # It maps column field to row field
     to_learn = original_data.to_dict(orient="records")
 else:
     to_learn = data.to_dict(orient="records")
