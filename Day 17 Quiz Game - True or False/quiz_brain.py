@@ -10,6 +10,7 @@ class QuizBrain:
         self.question_number += 1
         user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/ False): ").lower()
         self.check_input(user_answer, current_question.answer)
+
     def check_input(self, u_answer, c_answer):
         if u_answer == c_answer.lower():
             self.score += 1
