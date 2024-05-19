@@ -8,7 +8,7 @@ This Python project utilizes the OpenWeatherMap API and Twilio to send rain aler
 
 <img src="https://github.com/AnilNAKR/My-Python-ProjectsRepo/assets/16172853/c88c1de9-c8b4-40ee-bca9-ee4195ed5d33" width=200px>
 
-
+https://github.com/AnilNAKR/My-Python-ProjectsRepo/assets/16172853/eed93296-9c60-48ee-ad5f-4d7cd1c7d39f
 
 https://github.com/AnilNAKR/My-Python-ProjectsRepo/assets/16172853/0a0cdbdf-d255-4a9f-8c31-c1f3f59c1a42
 
