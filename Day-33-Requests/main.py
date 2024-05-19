@@ -44,7 +44,7 @@ def is_night():
 while True:
     time.sleep(60)
     if is_iss_overhead() and is_night():
-        connection = smtplib.SMTP("smtp.gmail.com")
+        connection = smtplib.SMTP("smtp.gmail.com", 587)
         connection.starttls()
         connection.login(email, password)
         connection.sendmail(from_addr=email, to_addrs=os.environ.get('MYMAILID2'), msg="Subject: Look Up :) !\n\n"

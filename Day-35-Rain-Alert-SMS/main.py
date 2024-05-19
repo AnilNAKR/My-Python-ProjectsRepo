@@ -8,14 +8,14 @@ auth_token = os.environ.get('TWILIO_TOKEN')
 api_key = os.environ.get('WEATHER_API_KEY')
 OWM_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 
-# cordinates are for Kolkata city that has rainfall at the current time
+# cordinates are for Bangalore city that has rainfall at the current time
 parameters = {
-    "lat": 22.5744,
-    "lon": 88.3629,
+    "lat": 12.9716,
+    "lon": 77.5946,
     "cnt": 4,
     "appid": api_key,
 }
-
+place = "Bangalore"
 response = requests.get(OWM_endpoint, params=parameters)
 # print(response.status_code)
 response.raise_for_status()
@@ -31,7 +31,7 @@ for i in range(len(weather_data['list'])):
 if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        body="It's going to rain today! So, Carry an Umbrella ☂️",
+        body=f"It's going to rain today in {place}! So, Carry an Umbrella ☂️",
         from_=os.environ.get('MOBILE_FROM'),
         to=os.environ.get('MOBILE_TO')
     )
