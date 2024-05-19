@@ -13,12 +13,12 @@ print(phonetic_dict)
 def generate_phonetic():
     output = input("Enter a word: ").upper()
     try:
-        final_output = [word_list[item] for item in output]
+        final_output1 = [word_list[item] for item in output]
     except KeyError:
         print("Sorry, only letters in the alphabet please")
         generate_phonetic()
     else:
-        print(final_output)
+        print(final_output1)
 
 
 generate_phonetic()
