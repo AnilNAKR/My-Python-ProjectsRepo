@@ -39,5 +39,4 @@ while game_is_on:
         score.increase_level()
 
 
-
 screen.exitonclick()
