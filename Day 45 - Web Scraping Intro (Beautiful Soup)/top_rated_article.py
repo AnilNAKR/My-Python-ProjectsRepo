@@ -24,17 +24,19 @@ articles_score = soup.find_all(name="span", class_="score")
 for score in articles_score:
     articles_scores.append(int(score.getText().split()[0]))
 
-# print(articles)
-# print(articles_links)
-print(articles_scores)
+print(f"Article Heading: {articles}\n")
+print(f"Article Link: {articles_links}\n")
+print(f"Articles Score: {articles_scores}\n")
 
-# max_upvotes = max(articles_scores)
-# print(max_upvotes)
-# max_index = articles_scores.index(max_upvotes)
+max_upvotes = max(articles_scores)
+print(f"Articles with highest score: {max_upvotes}\n")
+max_index = articles_scores.index(max_upvotes)
 # print(max_index)
-# print(articles[max_index+1])
-# print(articles_links[max_index+1])
-# Create a new Excel workbook
+print(f"Article: {articles[max_index]}\n")
+print(f"Article Link: {articles_links[max_index]}\n")
+
+
+# Create a new Excel workbook to save the data in excel
 workbook = openpyxl.Workbook()
 sheet = workbook.active
 
@@ -44,5 +46,4 @@ for index, value in enumerate(articles_scores):
 
 # Save the workbook
 workbook.save("output.xlsx")
-
 print("Excel file created successfully.")
