@@ -16,7 +16,7 @@ songs = []
 song_titles = soup.select("li ul li h3")
 for song in song_titles:
     songs.append(song.getText().strip())
-    print(song.getText().strip())
+    # print(song.getText().strip())
 
 # Authenticate Spotify
 sp = spotipy.Spotify(
@@ -31,6 +31,7 @@ sp = spotipy.Spotify(
     )
 )
 user_id = sp.current_user()['id']
+
 sunidhi_uri = 'spotify:artist:3eDT9fwXKuHWFvgZaaYC5v'
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
