@@ -39,13 +39,13 @@ def bye():
 
 @app.route('/username/<name>')
 def greet(name):
-    return f"Hello {name}!"
+    return f"Hello {name.title()}!"
 
 
 #  Creating variable paths and converting the path to a specified data type
 @app.route('/talk/<name>/<int:number>')
 def talk(name, number):
-    return f"Hello, I am {name} & I am currently ranked no.{number} in the list!"
+    return f"Hello, I am {name.title()} & I am currently ranked no.{number} in the list!"
 
 
 class User:
