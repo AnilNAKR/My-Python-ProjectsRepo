@@ -1,13 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    return ('<h1 style="text-align:center"> Hello World! </h1>'
-            '<p style="text-align:center"> My name is Anil </p>'
-            '<img src="https://media1.tenor.com/m/MFt1WVDeUhUAAAAd/smol-illegally-smol-cat.gif" align="center">')
+    return render_template("index.html")
 
 
 def make_bold(function):
