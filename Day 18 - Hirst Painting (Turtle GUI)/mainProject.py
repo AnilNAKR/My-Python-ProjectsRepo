@@ -1,4 +1,4 @@
-from main import color_list
+from color_list import color_list
 from turtle import Turtle, Screen
 import turtle as turtle_module
 import random
