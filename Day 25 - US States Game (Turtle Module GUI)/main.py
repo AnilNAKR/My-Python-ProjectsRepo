@@ -45,4 +45,4 @@ while correct < 51:
         state1.write_name(state_dict[answer_state], answer_state.title())
 
 # below code will keep the screen  open
-# turtle.mainloop()
+screen.mainloop()
