@@ -83,7 +83,7 @@ def get_cafes_at_location():
         return jsonify(error={"Not Found": "Sorry, we don't have a cafe at that location."}), 404
 
 
-# HTTP POST - Create Record
+# HTTP POST - Create Record using Postman
 @app.route('/add', methods=['POST'])
 def post_new_cafe():
     new_cafe = Cafe(
@@ -103,20 +103,20 @@ def post_new_cafe():
     return jsonify(reponse={"success": "Successfully added the new cafe."})
 
 
-# HTTP PUT/PATCH - Update Record
-@app.route('/update_price/<int:cafe_id>', methods=["PATCH"])
+# HTTP PUT/PATCH - Update Record using Postman
+@app.route('/update_price/<int:cafe_id>', methods=["PATCH", "PUT"])
 def patch_new_price(cafe_id):
-    new_price = request.args.get('new_price')
+    newprice = request.form.get('new_price')
     cafe = db.get_or_404(Cafe, cafe_id)
     if cafe:
-        cafe.coffee_price = new_price
+        cafe.coffee_price = newprice
         db.session.commit()
         return jsonify(response={"Success": "Successfully updated the price"}), 200
     else:
         return jsonify(error={"Not Found": "Sorry a cafe with that id was not found in the database."}), 404
 
 
-# HTTP DELETE - Delete Record
+# HTTP DELETE - Delete Record using Postman
 @app.route('/report-closed/<int:cafe_id>', methods=["DELETE"])
 def delete_cafe(cafe_id):
     api_key = request.args.get('api-key')
