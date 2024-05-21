@@ -7,7 +7,7 @@ gender_endpoint = "https://api.genderize.io/"
 country_endpoint = "https://api.first.org/data/v1/countries/"
 
 parameters = {
-    "name":input("Enter Name: ")
+    "name": input("Enter Name: ")
 }
 
 country_code_response = requests.get(url=country_code_endpoint, params=parameters)
