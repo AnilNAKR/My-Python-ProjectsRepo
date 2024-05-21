@@ -8,17 +8,18 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
 from sqlalchemy.sql.expression import desc
+import os
 
 MOVIESDB_API_ENDPOINT = "https://api.themoviedb.org/3/search/movie"
 MOVIES_DETAILS_ENDPOINT = "https://api.themoviedb.org/3/movie/51876"
 
 headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGMxZTAxZTkwYTA3MjQxMjRlNGM1YTE2ZTllNmRkYyIsInN1YiI6IjY2MzI1YmJhZDE4NTcyMDEyYjMzY2Q3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m3T12CGmOYOG5Z_91ZmmnekUzleLuvIYkXcqOKcbm2w"
-}
+            "accept": "application/json",
+            "Authorization": os.environ.get('movies_token')
+        }
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('secret_key')
 Bootstrap5(app)
 
 
@@ -126,11 +127,11 @@ def find_movie():
     movie_id = request.args.get('id')
     if movie_id:
         api_url = f"https://api.themoviedb.org/3/movie/{movie_id}"
-        headers1 = {
+        headers = {
             "accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGMxZTAxZTkwYTA3MjQxMjRlNGM1YTE2ZTllNmRkYyIsInN1YiI6IjY2MzI1YmJhZDE4NTcyMDEyYjMzY2Q3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.m3T12CGmOYOG5Z_91ZmmnekUzleLuvIYkXcqOKcbm2w"
+            "Authorization": os.environ.get('movies_token')
         }
-        response1 = requests.get(url=api_url, headers=headers1, params={"language": "en-US"})
+        response1 = requests.get(url=api_url, headers=headers, params={"language": "en-US"})
         data = response1.json()
         new_movie = Movie(
             title=data['title'],
