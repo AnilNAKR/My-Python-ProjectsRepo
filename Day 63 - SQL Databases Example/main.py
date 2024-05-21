@@ -39,36 +39,36 @@ class Book(db.Model):
 
 
 # Create table schema in the database. Requires application context
-# with app.app_context():
-#     db.create_all()
-#
-# # Create database record
-# with app.app_context():
-#     newbook = Book(title="Harry Potter & the Order of the phoenix", author="J.K.Rowling", rating=8.5)
-#     db.session.add(newbook)
-#     db.session.commit()
+with app.app_context():
+    db.create_all()
+
+# Create database record
+with app.app_context():
+    newbook = Book(title="Harry Potter & the Order of the phoenix", author="J.K.Rowling", rating=8.5)
+    db.session.add(newbook)
+    db.session.commit()
 
 # Querying the data
-# with app.app_context():
-#     result = db.session.execute(db.select(Book).order_by(Book.title))
-#     all_books = result.scalars()
-#     for b in all_books:
-#         print(b)
+with app.app_context():
+    result = db.session.execute(db.select(Book).order_by(Book.title))
+    all_books = result.scalars()
+    for b in all_books:
+        print(b)
 
-# # Updating the data
-# with app.app_context():
-#     book_to_update = db.session.execute(db.select(Book).where(Book.title == "Harry Potter & the chamber of secrets")).scalar()
-#     book_to_update.title = "Harry Potter & the half blood prince"
-#     db.session.commit()
+# Updating the data
+with app.app_context():
+    book_to_update = db.session.execute(db.select(Book).where(Book.title == "Harry Potter & the chamber of secrets")).scalar()
+    book_to_update.title = "Harry Potter & the half blood prince"
+    db.session.commit()
 
 
-# # update a record by Primary Key
-# book_id = 1
-# with app.app_context():
-#     # book_to_update = db.session.execute(db.select(Book).where(Book.id == book_id)).scalar()
-#     book_to_update = db.get_or_404(Book, book_id)
-#     book_to_update.title = "Harry Potter & the Philosopher's stone"
-#     db.session.commit()
+# update a record by Primary Key
+book_id = 1
+with app.app_context():
+    # book_to_update = db.session.execute(db.select(Book).where(Book.id == book_id)).scalar()
+    book_to_update = db.get_or_404(Book, book_id)
+    book_to_update.title = "Harry Potter & the Philosopher's stone"
+    db.session.commit()
 
 
 # Deleting a book data row
