@@ -36,7 +36,7 @@ def contact():
         email = data['email']
         phone = data['phone']
         message = data['message']
-        with smtplib.SMTP("smtp.gmail.com") as connection:
+        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
             connection.starttls()
             connection.login(user=my_email, password=my_passkey)
             connection.sendmail(from_addr=my_email,
